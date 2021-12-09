@@ -1,12 +1,14 @@
-using Microsoft.AspNetCore.Components;
-using Microsoft.Extensions.Localization;
-using [Owner].[Module].Services;
-using Oqtane.Models;
-using Oqtane.Modules;
-using Oqtane.Shared;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Components;
+using Microsoft.Extensions.Localization;
+using Oqtane.Models;
+using Oqtane.Modules;
+using Oqtane.Shared;
+
+using [Owner].[Module].Services;
+
 
 namespace [Owner].[Module]
 {

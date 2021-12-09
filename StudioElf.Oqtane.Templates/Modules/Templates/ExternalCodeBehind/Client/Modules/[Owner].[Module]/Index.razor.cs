@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Oqtane.Models;
 using Oqtane.Modules;
 using Oqtane.Shared;
+
 using [Owner].[Module].Services;
 
 namespace [Owner].[Module]
