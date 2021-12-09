@@ -10,14 +10,26 @@ Code Behind refers to (in this instace) the code for a Razor component that is w
 <ol>
 <li>
   Download the files as a zip.
+ 
+ ![image](https://user-images.githubusercontent.com/9447612/145406057-d7fb49b6-94fd-4b8b-92c2-ac607c61d099.png)
+
+
   </li>
-  <li>
-    
+ <li>
+ Open the zip and navigate to 
+  \StuidoElf.Oqtane.Templates-main.zip\StuidoElf.Oqtane.Templates-main\StudioElf.Oqtane.Templates
+ </li>
+ <li>
+ On you developement system, navigate to Oqtane.Framework\Oqtane.Server\wwwroot and copy/paste or drag/drop to the wwwroot folder.
+ </li>
+ <li>
+  Start or Restart Oqtane and the Code-behind Templates will will be available to be used.
+ </li>
 </ol>
 
-<p>
-The code-behind feature offers a number of advantages: 
-<u>
+<p> 
+The code behind feature offers a number of advantages  :
+<ul>
   <li>
     Makes code easy to understand and debug by separating application logic from presentation layer.
   </li>
