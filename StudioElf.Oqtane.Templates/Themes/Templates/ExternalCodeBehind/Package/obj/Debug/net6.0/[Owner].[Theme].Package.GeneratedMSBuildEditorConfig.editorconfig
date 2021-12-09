@@ -1,0 +1,10 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = [Owner].[Theme].Package
+build_property.ProjectDir = g:\StudioElf Git Repositories\oqtane.framework\Oqtane.Server\wwwroot\Themes\Templates\ExternalCodeBehind\Package\

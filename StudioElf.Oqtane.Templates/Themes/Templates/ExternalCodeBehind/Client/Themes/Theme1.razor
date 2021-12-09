@@ -1,0 +1,94 @@
+﻿@namespace [Owner].[Theme]
+@inherits ThemeBase
+
+<main role="main">
+    <nav class="navbar navbar-expand-md navbar-dark bg-primary fixed-top">
+        <Logo /><Menu Orientation="Horizontal" />
+        <div class="controls ms-auto">
+            <div class="controls-group"><UserProfile /> <Login /> <ControlPanel /></div>
+        </div>
+    </nav>
+    <div class="content">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <Pane Name="@PaneNames.Admin" />
+            </div>
+        </div>
+    </div>
+    <Pane Name="Top Full Width" />
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <Pane Name="Top 100%" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <Pane Name="Left 50%" />
+            </div>
+            <div class="col-md-6">
+                <Pane Name="Right 50%" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <Pane Name="Left 33%" />
+            </div>
+            <div class="col-md-4">
+                <Pane Name="Center 33%" />
+            </div>
+            <div class="col-md-4">
+                <Pane Name="Right 33%" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <Pane Name="Left Outer 25%" />
+            </div>
+            <div class="col-md-3">
+                <Pane Name="Left Inner 25%" />
+            </div>
+            <div class="col-md-3">
+                <Pane Name="Right Inner 25%" />
+            </div>
+            <div class="col-md-3">
+                <Pane Name="Right Outer 25%" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <Pane Name="Left 25%" />
+            </div>
+            <div class="col-md-6">
+                <Pane Name="Center 50%" />
+            </div>
+            <div class="col-md-3">
+                <Pane Name="Right 25%" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8">
+                <Pane Name="Left Sidebar 66%" />
+            </div>
+            <div class="col-md-4">
+                <Pane Name="Right Sidebar 33%" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <Pane Name="Left Sidebar 33%" />
+            </div>
+            <div class="col-md-8">
+                <Pane Name="Right Sidebar 66%" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <Pane Name="Bottom 100%" />
+            </div>
+        </div>
+    </div>
+    <Pane Name="Bottom Full Width" />
+    </div>
+</main>
