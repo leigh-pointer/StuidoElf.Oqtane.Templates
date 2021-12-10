@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>    
+    <Version>1.0.0</Version>
+    <Product>StudioElf.CodeBehindTemplates</Product>
+    <Authors>StudioElf</Authors>
+    <Company>StudioElf</Company>
+    <Description>Install package for Studio-Elf Code-behind Templates for Modules and Themes.</Description>
+    <Copyright>StudioElf</Copyright>
+    <AssemblyName>StudioElf.CodeBehindTemplates.Shared.Oqtane</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.ComponentModel.Annotations" Version="6.0.0-preview.4.21253.7" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Oqtane.Shared" Version="3.0.0" />
+  </ItemGroup>
+
+</Project>

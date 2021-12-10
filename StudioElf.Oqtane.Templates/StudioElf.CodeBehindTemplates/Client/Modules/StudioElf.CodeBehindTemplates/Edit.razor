@@ -1,0 +1,112 @@
+@using Oqtane.Modules.Controls
+@using StudioElf.CodeBehindTemplates.Services
+@using StudioElf.CodeBehindTemplates.Models
+
+@namespace StudioElf.CodeBehindTemplates
+@inherits ModuleBase
+@inject ICodeBehindTemplatesService CodeBehindTemplatesService
+@inject NavigationManager NavigationManager
+@inject IStringLocalizer<Edit> Localizer
+
+<form @ref="form" class="@(validated ? " was-validated" : "needs-validation" )" novalidate>
+    <div class="container">
+        <div class="row mb-1 align-items-center">
+            <Label Class="col-sm-3" For="name" HelpText="Enter a name" ResourceKey="Name">Name: </Label>
+            <div class="col-sm-9">
+                <input id="name" class="form-control" @bind="@_name" required />
+            </div>
+        </div>
+    </div>
+    <button type="button" class="btn btn-success" @onclick="Save">@Localizer["Save"]</button>
+    <NavLink class="btn btn-secondary" href="@NavigateUrl()">@Localizer["Cancel"]</NavLink>
+    <br /><br />
+    @if (PageState.Action == "Edit")
+    {
+    <AuditInfo CreatedBy="@_createdby" CreatedOn="@_createdon" ModifiedBy="@_modifiedby" ModifiedOn="@_modifiedon"></AuditInfo>
+    }
+</form>
+
+@code {
+    public override SecurityAccessLevel SecurityAccessLevel => SecurityAccessLevel.Edit;
+
+    public override string Actions => "Add,Edit";
+
+    public override string Title => "Manage CodeBehindTemplates";
+
+    public override List<Resource> Resources => new List<Resource>()
+    {
+        new Resource { ResourceType = ResourceType.Stylesheet, Url = ModulePath() + "Module.css" }
+    };
+
+    private ElementReference form;
+    private bool validated = false;
+
+    private int _id;
+    private string _name;
+    private string _createdby;
+    private DateTime _createdon;
+    private string _modifiedby;
+    private DateTime _modifiedon;
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            if (PageState.Action == "Edit")
+            {
+                _id = Int32.Parse(PageState.QueryString["id"]);
+                CodeBehindTemplates CodeBehindTemplates = await CodeBehindTemplatesService.GetCodeBehindTemplatesAsync(_id, ModuleState.ModuleId);
+                if (CodeBehindTemplates != null)
+                {
+                    _name = CodeBehindTemplates.Name;
+                    _createdby = CodeBehindTemplates.CreatedBy;
+                    _createdon = CodeBehindTemplates.CreatedOn;
+                    _modifiedby = CodeBehindTemplates.ModifiedBy;
+                    _modifiedon = CodeBehindTemplates.ModifiedOn;
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            await logger.LogError(ex, "Error Loading CodeBehindTemplates {CodeBehindTemplatesId} {Error}", _id, ex.Message);
+            AddModuleMessage(Localizer["Message.LoadError"], MessageType.Error);
+        }
+    }
+
+    private async Task Save()
+    {
+        try
+        {
+            validated = true;
+            var interop = new Oqtane.UI.Interop(JSRuntime);
+            if (await interop.FormValid(form))
+            {
+                if (PageState.Action == "Add")
+                {
+                    CodeBehindTemplates CodeBehindTemplates = new CodeBehindTemplates();
+                    CodeBehindTemplates.ModuleId = ModuleState.ModuleId;
+                    CodeBehindTemplates.Name = _name;
+                    CodeBehindTemplates = await CodeBehindTemplatesService.AddCodeBehindTemplatesAsync(CodeBehindTemplates);
+                    await logger.LogInformation("CodeBehindTemplates Added {CodeBehindTemplates}", CodeBehindTemplates);
+                }
+                else
+                {
+                    CodeBehindTemplates CodeBehindTemplates = await CodeBehindTemplatesService.GetCodeBehindTemplatesAsync(_id, ModuleState.ModuleId);
+                    CodeBehindTemplates.Name = _name;
+                    await CodeBehindTemplatesService.UpdateCodeBehindTemplatesAsync(CodeBehindTemplates);
+                    await logger.LogInformation("CodeBehindTemplates Updated {CodeBehindTemplates}", CodeBehindTemplates);
+                }
+                NavigationManager.NavigateTo(NavigateUrl());
+            }
+            else
+            {
+                AddModuleMessage(Localizer["Message.SaveValidation"], MessageType.Warning);
+            }
+        }
+        catch (Exception ex)
+        {
+            await logger.LogError(ex, "Error Saving CodeBehindTemplates {Error}", ex.Message);
+            AddModuleMessage(Localizer["Message.SaveError"], MessageType.Error);
+        }
+    }
+}

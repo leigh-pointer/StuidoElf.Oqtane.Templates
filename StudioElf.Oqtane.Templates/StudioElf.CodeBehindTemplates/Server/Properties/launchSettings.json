@@ -1,0 +1,15 @@
+{
+  "profiles": {
+    "Run Attach": {
+      "commandName": "Executable",
+      "executablePath": "dotnet",
+      "commandLineArgs": "watch run ..\\..\\oqtane.framework\\Oqtane.Server\\bin\\Debug\\net5.0\\Oqtane.Server.dll",
+      "workingDirectory": "..\\..\\oqtane.framework\\Oqtane.Server",
+      "launchBrowser": true,
+      "launchUrl": "http://localhost:44357",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}

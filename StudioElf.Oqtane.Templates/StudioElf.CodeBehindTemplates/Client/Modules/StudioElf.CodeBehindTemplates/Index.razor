@@ -1,0 +1,85 @@
+@namespace StudioElf.CodeBehindTemplates
+@inherits ModuleBase
+@*@using StudioElf.CodeBehindTemplates.Services
+@using StudioElf.CodeBehindTemplates.Models
+
+@inject ICodeBehindTemplatesService CodeBehindTemplatesService
+@inject NavigationManager NavigationManager
+@inject IStringLocalizer<Index> Localizer
+*@
+
+    <h4>Install Package for Studio-Elf Module and Theme Templates</h4>
+    <p>
+        Currently this module has no funcitonality except to assist in the Install and Uninstall of the Templates.
+    </p>
+    <a href="https://github.com/leigh-pointer/StuidoElf.Oqtane.Templates/tree/main/StudioElf.Oqtane.Templates">StudioElf.Oqtane.Templates</a> -> github
+
+
+@*@if (_CodeBehindTemplatess == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <ActionLink Action="Add" Security="SecurityAccessLevel.Edit" Text="Add CodeBehindTemplates" ResourceKey="Add" />
+    <br />
+    <br />
+    @if (@_CodeBehindTemplatess.Count != 0)
+    {
+        <Pager Items="@_CodeBehindTemplatess">
+            <Header>
+                <th style="width: 1px;">&nbsp;</th>
+                <th style="width: 1px;">&nbsp;</th>
+                <th>@Localizer["Name"]</th>
+            </Header>
+            <Row>
+                <td><ActionLink Action="Edit" Parameters="@($"id=" + context.CodeBehindTemplatesId.ToString())" ResourceKey="Edit"  /></td>
+                <td><ActionDialog Header="Delete CodeBehindTemplates" Message="@("Are You Sure You Wish To Delete The " + context.Name + " CodeBehindTemplates?")" Action="Delete" Security="SecurityAccessLevel.Edit" Class="btn btn-danger" OnClick="@(async () => await Delete(context))" ResourceKey="Delete"  /></td>
+                <td>@context.Name</td>
+            </Row>
+        </Pager>
+    }
+    else
+    {
+        <p>@Localizer["Message.DisplayNone"]</p>
+    }
+}*@
+
+@code {
+    //public override List<Resource> Resources => new List<Resource>()
+    //{
+    //    new Resource { ResourceType = ResourceType.Stylesheet, Url = ModulePath() + "Module.css" },
+    //    new Resource { ResourceType = ResourceType.Script, Url = ModulePath() + "Module.js" }
+    //};
+
+    //List<CodeBehindTemplates> _CodeBehindTemplatess;
+
+    //protected override async Task OnInitializedAsync()
+    //{
+    //    try
+    //    {
+    //        _CodeBehindTemplatess = await CodeBehindTemplatesService.GetCodeBehindTemplatessAsync(ModuleState.ModuleId);
+    //    }
+    //    catch (Exception ex)
+    //    {
+    //        await logger.LogError(ex, "Error Loading CodeBehindTemplates {Error}", ex.Message);
+    //        AddModuleMessage(Localizer["Message.LoadError"], MessageType.Error);
+    //    }
+    //}
+
+    //private async Task Delete(CodeBehindTemplates CodeBehindTemplates)
+    //{
+    //    try
+    //    {
+    //        await CodeBehindTemplatesService.DeleteCodeBehindTemplatesAsync(CodeBehindTemplates.CodeBehindTemplatesId, ModuleState.ModuleId);
+    //        await logger.LogInformation("CodeBehindTemplates Deleted {CodeBehindTemplates}", CodeBehindTemplates);
+    //        _CodeBehindTemplatess = await CodeBehindTemplatesService.GetCodeBehindTemplatessAsync(ModuleState.ModuleId);
+    //        StateHasChanged();
+    //    }
+    //    catch (Exception ex)
+    //    {
+    //        await logger.LogError(ex, "Error Deleting CodeBehindTemplates {CodeBehindTemplates} {Error}", CodeBehindTemplates, ex.Message);
+    //        AddModuleMessage(Localizer["Message.DeleteError"], MessageType.Error);
+    //    }
+    //}
+}
