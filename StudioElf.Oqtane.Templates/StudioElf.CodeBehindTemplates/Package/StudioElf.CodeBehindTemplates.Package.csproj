@@ -7,8 +7,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Client\StudioElf.CodeBehindTemplates.Client.csproj" />
-    <ProjectReference Include="..\Server\StudioElf.CodeBehindTemplates.Server.csproj" />
-    <ProjectReference Include="..\Shared\StudioElf.CodeBehindTemplates.Shared.csproj" />
   </ItemGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">

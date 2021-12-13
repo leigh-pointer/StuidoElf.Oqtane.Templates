@@ -11,7 +11,7 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <license type="expression">MIT</license>
     <projectUrl>https://github.com/leigh-pointer/StuidoElf.Oqtane.Templates</projectUrl>
-    <icon>CodeBehide.png</icon>
+    <icon>CodeBehind.png</icon>
     <tags>oqtane module</tags>
     <releaseNotes></releaseNotes>
     <summary></summary>
@@ -22,12 +22,8 @@
   <files>
     <file src="..\Client\bin\Release\net6.0\StudioElf.CodeBehindTemplates.Client.Oqtane.dll" target="lib\net6.0" /> 
     <file src="..\Client\bin\Release\net6.0\StudioElf.CodeBehindTemplates.Client.Oqtane.pdb" target="lib\net6.0" /> 
-    <file src="..\Server\bin\Release\net6.0\StudioElf.CodeBehindTemplates.Server.Oqtane.dll" target="lib\net6.0" /> 
-    <file src="..\Server\bin\Release\net6.0\StudioElf.CodeBehindTemplates.Server.Oqtane.pdb" target="lib\net6.0" /> 
-    <file src="..\Shared\bin\Release\net6.0\StudioElf.CodeBehindTemplates.Shared.Oqtane.dll" target="lib\net6.0" /> 
-    <file src="..\Shared\bin\Release\net6.0\StudioElf.CodeBehindTemplates.Shared.Oqtane.pdb" target="lib\net6.0" />
 	<file src="..\..\Modules\**\*.*" target="wwwroot\Modules" />
 	<file src="..\..\Themes\**\*.*" target="wwwroot\Themes" />
-	<file src="CodeBehide.png" target="" />
+	<file src="CodeBehind.png" target="" />
   </files>
 </package>

@@ -42,10 +42,6 @@
     <PackageReference Include="Oqtane.Shared" Version="3.0.0" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Shared\StudioElf.CodeBehindTemplates.Shared.csproj" />
-  </ItemGroup>
-
   <PropertyGroup>
     <!-- there may be other elements here -->
     <BlazorWebAssemblyEnableLinking>false</BlazorWebAssemblyEnableLinking>
