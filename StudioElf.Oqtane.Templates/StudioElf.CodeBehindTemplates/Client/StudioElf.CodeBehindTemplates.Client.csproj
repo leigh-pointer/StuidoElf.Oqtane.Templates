@@ -38,8 +38,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Oqtane.Client" Version="3.0.0" />
-    <PackageReference Include="Oqtane.Shared" Version="3.0.0" />
+    <PackageReference Include="Oqtane.Client" Version="3.0.3" />
+    <PackageReference Include="Oqtane.Shared" Version="3.0.3" />
   </ItemGroup>
 
   <PropertyGroup>
