@@ -6,6 +6,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="obj\**" />
+    <EmbeddedResource Remove="obj\**" />
+    <None Remove="obj\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Client\StudioElf.CodeBehindTemplates.Client.csproj" />
   </ItemGroup>
 
