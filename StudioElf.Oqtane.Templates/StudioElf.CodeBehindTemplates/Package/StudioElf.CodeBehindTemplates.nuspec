@@ -21,9 +21,9 @@
   </metadata>
   <files>
     <file src="..\Client\bin\Release\net6.0\StudioElf.CodeBehindTemplates.Client.Oqtane.dll" target="lib\net6.0" /> 
-    <file src="..\Client\bin\Release\net6.0\StudioElf.CodeBehindTemplates.Client.Oqtane.pdb" target="lib\net6.0" /> 
-	<file src="..\..\Modules\**\*.*" target="wwwroot\Modules" />
-	<file src="..\..\Themes\**\*.*" target="wwwroot\Themes" />
-	<file src="CodeBehind.png" target="" />
+    <file src="..\Client\bin\Release\net6.0\StudioElf.CodeBehindTemplates.Client.Oqtane.pdb" target="lib\net6.0" />
+    <file src="..\..\Modules\**\*.*" target="wwwroot\Modules" />
+    <file src="..\..\Themes\**\*.*" target="wwwroot\Themes" />
+	  <file src="CodeBehind.png" target="" />
   </files>
 </package>
