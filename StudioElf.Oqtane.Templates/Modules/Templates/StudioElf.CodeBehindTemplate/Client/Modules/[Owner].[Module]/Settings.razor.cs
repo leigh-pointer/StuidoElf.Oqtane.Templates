@@ -12,10 +12,8 @@ namespace [Owner].[Module]
     {
         string _value;
 
-        [Inject]
-        public ISettingService SettingService { get; set; }
-        [Inject]
-        public IStringLocalizer<Settings> Localizer{ get; set; }
+        [Inject] public ISettingService SettingService { get; set; }
+        [Inject] public IStringLocalizer<Settings> Localizer{ get; set; }
 
         public override string Title => "[Module] Settings";
 
