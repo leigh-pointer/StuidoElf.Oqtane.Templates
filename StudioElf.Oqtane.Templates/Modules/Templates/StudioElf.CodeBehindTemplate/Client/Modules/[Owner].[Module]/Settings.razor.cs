@@ -15,6 +15,7 @@ namespace [Owner].[Module]
         [Inject] public ISettingService SettingService { get; set; }
         [Inject] public IStringLocalizer<Settings> Localizer{ get; set; }
 
+		private string resourceType = "[Owner].[Module].Settings, [Owner].[Module].Client.Oqtane"; // for localization
         public override string Title => "[Module] Settings";
 
 

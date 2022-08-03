@@ -9,8 +9,8 @@ namespace StudioElf.CodeBehindTemplates
         {
             Name = "Studio-Elf Code-behind Templates [C#]",
             Description = "Studio-Elf Code-behind Templates [C#]",
-            Version = "3.1.1",
-            ReleaseVersions = "1.0.0,1.1.0,3.1.0,3.1.1",
+            Version = "3.1.4",
+            ReleaseVersions = "1.0.0,1.1.0,3.1.0,3.1.1,3.1.4",
             PackageName = "StudioElf.CodeBehindTemplates" 
         };
     }
