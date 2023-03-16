@@ -30,13 +30,9 @@ namespace [Owner].[Module]
 
 		private ElementReference form;
 		private bool validated = false;
-
+		private Models.[Module] [Module] { get; set; } = new();
 		private int _id;
-		private string _name;
-		private string _createdby;
-		private DateTime _createdon;
-		private string _modifiedby;
-		private DateTime _modifiedon;
+
 	   
 		protected override async Task OnInitializedAsync()
 		{
@@ -45,15 +41,7 @@ namespace [Owner].[Module]
 				if (PageState.Action == "Edit")
 				{
 					_id = Int32.Parse(PageState.QueryString["id"]);
-					Models.[Module] [Module] = await [Module]Service.Get[Module]Async(_id, ModuleState.ModuleId);
-					if ([Module] != null)
-					{
-						_name = [Module].Name;
-						_createdby = [Module].CreatedBy;
-						_createdon = [Module].CreatedOn;
-						_modifiedby = [Module].ModifiedBy;
-						_modifiedon = [Module].ModifiedOn;
-					}
+					[Module] = await [Module]Service.Get[Module]Async(_id, ModuleState.ModuleId);
 				}
 			}
 			catch (Exception ex)
@@ -72,17 +60,15 @@ namespace [Owner].[Module]
 				if (await interop.FormValid(form))
 				{
 					if (PageState.Action == "Add")
-					{
-						Models.[Module] [Module] = new Models.[Module]();
+					{						
 						[Module].ModuleId = ModuleState.ModuleId;
-						[Module].Name = _name;
 						[Module] = await [Module]Service.Add[Module]Async([Module]);
 						await logger.LogInformation("[Module] Added {[Module]}", [Module]);
 					}
 					else
 					{
-						Models.[Module] [Module] = await [Module]Service.Get[Module]Async(_id, ModuleState.ModuleId);
-						[Module].Name = _name;
+						Models.[Module] [Module]Latest = await [Module]Service.Get[Module]Async(_id, ModuleState.ModuleId);
+						[Module]Latest.Name = [Module].Name;
 						await [Module]Service.Update[Module]Async([Module]);
 						await logger.LogInformation("[Module] Updated {[Module]}", [Module]);
 					}

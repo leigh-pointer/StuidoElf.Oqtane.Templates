@@ -14,6 +14,7 @@ namespace [Owner].[Module]
     public partial class Index : ModuleBase
     {
         List<Models.[Module]> _[Module]s;
+		
         [Inject] public I[Module]Service [Module]Service { get; set; }
         [Inject] public  NavigationManager NavigationManager { get; set; }
         [Inject] public  IStringLocalizer<Index> Localizer { get; set; }
@@ -23,6 +24,7 @@ namespace [Owner].[Module]
             new Resource { ResourceType = ResourceType.Stylesheet, Url = ModulePath() + "Module.css" },
             new Resource { ResourceType = ResourceType.Script, Url = ModulePath() + "Module.js" }
         };
+		
         protected override async Task OnInitializedAsync()
         {
             try
