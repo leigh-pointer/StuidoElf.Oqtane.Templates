@@ -30,7 +30,7 @@ namespace [Owner].[Module]
 
 		private ElementReference form;
 		private bool validated = false;
-		private Models.[Module] [Module] = new();
+		private Models.[Module] [Module] { get; set; } = new();
 		private int _id;
 
 	   
