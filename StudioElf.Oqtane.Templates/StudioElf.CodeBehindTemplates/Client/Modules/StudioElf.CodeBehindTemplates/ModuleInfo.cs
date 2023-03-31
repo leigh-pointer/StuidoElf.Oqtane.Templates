@@ -8,9 +8,10 @@ namespace StudioElf.CodeBehindTemplates
         public ModuleDefinition ModuleDefinition => new ModuleDefinition
         {
             Name = "Studio-Elf Code-behind Templates [C#]",
-            Description = "Studio-Elf Code-behind Templates [C#]",
-            Version = "3.1.4",
-            ReleaseVersions = "1.0.0,1.1.0,3.1.0,3.1.1,3.1.4",
+            Description = "This in not a module.",
+            Version = "3.4.1",
+            Categories = "Developer",
+            ReleaseVersions = "3.4.1",
             PackageName = "StudioElf.CodeBehindTemplates" 
         };
     }

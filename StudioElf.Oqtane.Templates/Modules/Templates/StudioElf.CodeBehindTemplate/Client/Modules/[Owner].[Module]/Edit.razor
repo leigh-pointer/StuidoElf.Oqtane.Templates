@@ -8,7 +8,7 @@
         <div class="row mb-1 align-items-center">
             <Label Class="col-sm-3" For="name" HelpText="Enter a name" ResourceKey="Name">Name: </Label>
             <div class="col-sm-9">
-                <input id="name" class="form-control" @bind="@_name" required />
+                <input id="name" class="form-control" @bind="@[Module].Name" required />
             </div>
         </div>
     </div>
@@ -17,7 +17,7 @@
     <br /><br />
     @if (PageState.Action == "Edit")
     {
-    <AuditInfo CreatedBy="@_createdby" CreatedOn="@_createdon" ModifiedBy="@_modifiedby" ModifiedOn="@_modifiedon"></AuditInfo>
+    <AuditInfo CreatedBy="@[Module].CreatedBy" CreatedOn="@[Module].CreatedOn" ModifiedBy="@[Module].ModifiedBy" ModifiedOn="@[Module].ModifiedOn"></AuditInfo>
     }
 </form>
 
