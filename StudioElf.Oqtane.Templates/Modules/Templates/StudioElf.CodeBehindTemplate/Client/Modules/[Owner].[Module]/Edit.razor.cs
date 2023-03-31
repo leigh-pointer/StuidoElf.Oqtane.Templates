@@ -41,7 +41,7 @@ namespace [Owner].[Module]
 				if (PageState.Action == "Edit")
 				{
 					_id = Int32.Parse(PageState.QueryString["id"]);
-					[Module] = await [Module]Service.Get[Module]Async(_id, ModuleState.ModuleId);
+					Models.[Module] [Module] = await [Module]Service.Get[Module]Async(_id, ModuleState.ModuleId);
 				}
 			}
 			catch (Exception ex)
@@ -68,9 +68,11 @@ namespace [Owner].[Module]
 					else
 					{
 						Models.[Module] [Module]Latest = await [Module]Service.Get[Module]Async(_id, ModuleState.ModuleId);
+						// update values from the local version of [Module]
 						[Module]Latest.Name = [Module].Name;
-						await [Module]Service.Update[Module]Async([Module]);
-						await logger.LogInformation("[Module] Updated {[Module]}", [Module]);
+						// update Database with the latest version of [Module]
+						await [Module]Service.Update[Module]Async([Module]Latest);
+						await logger.LogInformation("[Module] Updated {[Module]Latest}", [Module]Latest);
 					}
 					NavigationManager.NavigateTo(NavigateUrl());
 				}
