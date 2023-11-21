@@ -1,9 +1,8 @@
-<Project Sdk="Microsoft.NET.Sdk.Razor">
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
-    <RazorLangVersion>3.0</RazorLangVersion>
-    <Version>3.1.1</Version>
+    <TargetFramework>net8.0</TargetFramework>
+    <Version>5.0.0</Version>
     <Authors>StudioElf</Authors>
     <Company>StudioElf</Company>
     <Description>Install package for Studio-Elf Code-behind Oqtane Templates for Modules and Themes.</Description>
@@ -23,23 +22,31 @@
     <None Remove="Services\**" />
   </ItemGroup>
 
+    <ItemGroup>
+      <PackageReference Include="Oqtane.Client" Version="5.0.0" />
+      <PackageReference Include="Oqtane.Shared" Version="5.0.0" />
+    </ItemGroup>
+
   <ItemGroup>
     <Content Remove="Modules\StudioElf.CodeBehindTemplates\Edit.razor" />
     <Content Remove="Modules\StudioElf.CodeBehindTemplates\Settings.razor" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="6.0.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="6.0.0" PrivateAssets="all" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Authentication" Version="6.0.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Localization" Version="2.2.0" />
-    <PackageReference Include="Microsoft.Extensions.Localization" Version="6.0.0" />
-    <PackageReference Include="System.Net.Http.Json" Version="6.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="8.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="8.0.0" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Authentication" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Localization" Version="8.0.0" />
+    <PackageReference Include="System.Net.Http.Json" Version="8.0.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Oqtane.Client" Version="3.0.3" />
-    <PackageReference Include="Oqtane.Shared" Version="3.0.3" />
+    <Reference Include="Oqtane.Client">
+      <HintPath>..\..\..\..\Oqtane.Framework\Oqtane.Client\bin\Debug\net7.0\Oqtane.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Oqtane.Shared">
+      <HintPath>..\..\..\..\Oqtane.Framework\Oqtane.Shared\bin\Debug\net7.0\Oqtane.Shared.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
   <PropertyGroup>

@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>StudioElf.CodeBehindTemplates</id>
-    <version>3.4.1</version>
+    <version>5.0.0</version>
     <authors>StudioElf</authors>
     <owners>StudioElf</owners>
     <title>Studtio-Elf.CodeBehindTemplates</title>
@@ -16,12 +16,12 @@
     <releaseNotes></releaseNotes>
     <summary></summary>
     <dependencies>
-      <dependency id="Oqtane.Framework" version="3.4.0" />
+      <dependency id="Oqtane.Framework" version="5.0.0" />
     </dependencies>
   </metadata>
   <files>
-    <file src="..\Client\bin\Release\net6.0\StudioElf.CodeBehindTemplates.Client.Oqtane.dll" target="lib\net6.0" /> 
-    <file src="..\Client\bin\Release\net6.0\StudioElf.CodeBehindTemplates.Client.Oqtane.pdb" target="lib\net6.0" />
+    <file src="..\Client\bin\Release\net8.0\StudioElf.CodeBehindTemplates.Client.Oqtane.dll" target="lib\net8.0" /> 
+    <file src="..\Client\bin\Release\net8.0\StudioElf.CodeBehindTemplates.Client.Oqtane.pdb" target="lib\net8.0" />
     <file src="..\..\Modules\**\*.*" target="wwwroot\Modules" />
     <file src="..\..\Themes\**\*.*" target="wwwroot\Themes" />
 	  <file src="CodeBehind.png" target="" />
