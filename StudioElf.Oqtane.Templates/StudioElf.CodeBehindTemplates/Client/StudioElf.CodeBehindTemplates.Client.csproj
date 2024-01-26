@@ -31,8 +31,8 @@
   </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="Oqtane.Client" Version="5.0.0" />
-      <PackageReference Include="Oqtane.Shared" Version="5.0.0" />
+      <PackageReference Include="Oqtane.Client" Version="5.0.2" />
+      <PackageReference Include="Oqtane.Shared" Version="5.0.2" />
     </ItemGroup>
 
   <ItemGroup>
@@ -50,10 +50,10 @@
 
   <ItemGroup>
     <Reference Include="Oqtane.Client">
-      <HintPath>..\..\..\..\Oqtane.Framework\Oqtane.Client\bin\Debug\net7.0\Oqtane.Client.dll</HintPath>
+      <HintPath>..\..\..\..\Oqtane.Framework\Oqtane.Client\bin\Debug\net8.0\Oqtane.Client.dll</HintPath>
     </Reference>
     <Reference Include="Oqtane.Shared">
-      <HintPath>..\..\..\..\Oqtane.Framework\Oqtane.Shared\bin\Debug\net7.0\Oqtane.Shared.dll</HintPath>
+      <HintPath>..\..\..\..\Oqtane.Framework\Oqtane.Shared\bin\Debug\net8.0\Oqtane.Shared.dll</HintPath>
     </Reference>
   </ItemGroup>
 
