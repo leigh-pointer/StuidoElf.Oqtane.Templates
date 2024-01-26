@@ -14,12 +14,20 @@
   <ItemGroup>
     <Compile Remove="Resources\**" />
     <Compile Remove="Services\**" />
+    <Compile Remove="wwwroot\Modules\**" />
+    <Compile Remove="wwwroot\Themes\**" />
     <Content Remove="Resources\**" />
     <Content Remove="Services\**" />
+    <Content Remove="wwwroot\Modules\**" />
+    <Content Remove="wwwroot\Themes\**" />
     <EmbeddedResource Remove="Resources\**" />
     <EmbeddedResource Remove="Services\**" />
+    <EmbeddedResource Remove="wwwroot\Modules\**" />
+    <EmbeddedResource Remove="wwwroot\Themes\**" />
     <None Remove="Resources\**" />
     <None Remove="Services\**" />
+    <None Remove="wwwroot\Modules\**" />
+    <None Remove="wwwroot\Themes\**" />
   </ItemGroup>
 
     <ItemGroup>
@@ -55,4 +63,17 @@
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
   </PropertyGroup>
 
+	<ItemGroup>
+		<ModuleTemplateFiles Include="$(ProjectDir)wwwroot\Modules\Templates\**\*.*" />
+		<ThemeTemplateFiles Include="$(ProjectDir)wwwroot\Themes\Templates\**\*.*" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="wwwroot\" />
+	</ItemGroup>
+
+	<Target Name="AddPayloadsFolder" AfterTargets="Publish">
+		<Copy SourceFiles="@(ModuleTemplateFiles)" DestinationFiles="@(ModuleTemplateFiles->'$(PublishDir)wwwroot\Modules\Templates\%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="false" />
+		<Copy SourceFiles="@(ThemeTemplateFiles)" DestinationFiles="@(ThemeTemplateFiles->'$(PublishDir)wwwroot\Themes\Templates\%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="false" />
+	</Target>
 </Project>

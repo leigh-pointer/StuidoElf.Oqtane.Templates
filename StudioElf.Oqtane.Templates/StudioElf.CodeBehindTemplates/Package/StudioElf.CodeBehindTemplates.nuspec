@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
-  <metadata>
-    <id>StudioElf.CodeBehindTemplates</id>
-    <version>5.0.0</version>
-    <authors>StudioElf</authors>
-    <owners>StudioElf</owners>
-    <title>Studtio-Elf.CodeBehindTemplates</title>
-    <description>Studtio-Elf Code-behind Templates</description>
-    <copyright>StudioElf</copyright>
-    <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <license type="expression">MIT</license>
-    <projectUrl>https://github.com/leigh-pointer/StuidoElf.Oqtane.Templates</projectUrl>
-    <icon>CodeBehind.png</icon>
-    <tags>oqtane module</tags>
-    <releaseNotes></releaseNotes>
-    <summary></summary>
-    <dependencies>
-      <dependency id="Oqtane.Framework" version="5.0.0" />
-    </dependencies>
-  </metadata>
-  <files>
-    <file src="..\Client\bin\Release\net8.0\StudioElf.CodeBehindTemplates.Client.Oqtane.dll" target="lib\net8.0" /> 
-    <file src="..\Client\bin\Release\net8.0\StudioElf.CodeBehindTemplates.Client.Oqtane.pdb" target="lib\net8.0" />
-    <file src="..\..\Modules\**\*.*" target="wwwroot\Modules" />
-    <file src="..\..\Themes\**\*.*" target="wwwroot\Themes" />
-	  <file src="CodeBehind.png" target="" />
-  </files>
+	<metadata>
+		<id>StudioElf.CodeBehindTemplates</id>
+		<version>5.0.2</version>
+		<authors>StudioElf</authors>
+		<owners>StudioElf</owners>
+		<title>Studtio-Elf.CodeBehindTemplates</title>
+		<description>Studtio-Elf Code-behind Templates</description>
+		<copyright>StudioElf</copyright>
+		<requireLicenseAcceptance>false</requireLicenseAcceptance>
+		<license type="expression">MIT</license>
+		<projectUrl>https://github.com/leigh-pointer/StuidoElf.Oqtane.Templates</projectUrl>
+		<icon>CodeBehind.png</icon>
+		<tags>oqtane module</tags>
+		<releaseNotes></releaseNotes>
+		<summary></summary>
+		<dependencies>
+			<dependency id="Oqtane.Framework" version="5.0.0" />
+		</dependencies>
+	</metadata>
+	<files>
+		<file src="..\Client\bin\Release\net8.0\StudioElf.CodeBehindTemplates.Client.Oqtane.dll" target="lib\net8.0" />
+		<file src="..\Client\bin\Release\net8.0\StudioElf.CodeBehindTemplates.Client.Oqtane.pdb" target="lib\net8.0" />
+		<file src="..\Client\wwwroot\Modules\**\*.*" target="wwwroot\Modules" />
+		<file src="..\Client\wwwroot\Themes\**\*.*" target="wwwroot\Themes" />
+		<file src="CodeBehind.png" target="" />
+	</files>
 </package>
