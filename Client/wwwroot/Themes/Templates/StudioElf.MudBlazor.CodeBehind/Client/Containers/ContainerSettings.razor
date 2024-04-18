@@ -1,0 +1,18 @@
+@namespace [Owner].Theme.[Theme]
+@using Oqtane.Modules;
+@using Oqtane.Modules.Controls
+@attribute [OqtaneIgnore]
+
+@inherits ModuleBase
+
+<div class="container">
+    <div class="row mb-1 align-items-center">
+        <Label Class="col-sm-3" For="title" ResourceKey="Title" ResourceType="@resourceType" HelpText="Specify If The Module Title Should Be Displayed">Display Title?</Label>
+        <div class="col-sm-9">
+            <select id="title" class="form-select" @bind="@_title">
+                <option value="true">Yes</option>
+                <option value="false">No</option>
+            </select>
+        </div>
+    </div>
+</div>

@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
 	<metadata>
 		<id>StudioElf.CodeBehindTemplates</id>
-		<version>5.1.0</version>
+		<version>5.1.0.1</version>
 		<authors>StudioElf</authors>
 		<owners>StudioElf</owners>
 		<title>Studtio-Elf.CodeBehindTemplates</title>

@@ -1,0 +1,42 @@
+@namespace [Owner].Theme.[Theme]
+@using Oqtane.Modules
+@using Oqtane.Modules.Controls
+@using Oqtane.Security
+@using Oqtane.Shared
+
+@inherits ModuleBase
+
+<div class="container">
+    <div class="row mb-1 align-items-center">
+        <Label Class="col-sm-3" For="scope" ResourceKey="Scope" ResourceType="@resourceType" HelpText="Specify if the settings are applicable to this page or the entire site.">Setting Scope:</Label>
+        <div class="col-sm-9">
+            <select id="scope" class="form-select" value="@_scope" @onchange="(e => ScopeChanged(e))">
+                @if (UserSecurity.IsAuthorized(PageState.User, RoleNames.Admin))
+                {
+                <option value="site">@Localizer["Site"]</option>
+                }
+                <option value="page">@Localizer["Page"]</option>
+            </select>
+        </div>
+    </div>
+    <div class="row mb-1 align-items-center">
+        <Label Class="col-sm-3" For="login" ResourceKey="Login" ResourceType="@resourceType" HelpText="Specify if a Login option should be displayed. Note that this option does not prevent the login page from being accessible via a direct url.">Show Login?</Label>
+        <div class="col-sm-9">
+            <select id="login" class="form-select" @bind="@_login">
+                <option value="-">&lt;@SharedLocalizer["Not Specified"]&gt;</option>
+                <option value="true">@SharedLocalizer["Yes"]</option>
+                <option value="false">@SharedLocalizer["No"]</option>
+            </select>
+        </div>
+    </div>
+    <div class="row mb-1 align-items-center">
+        <Label Class="col-sm-3" For="register" ResourceKey="Register" ResourceType="@resourceType" HelpText="Specify if a Register option should be displayed. Note that this option is also dependent on the Allow Registration option in Site Settings.">Show Register?</Label>
+        <div class="col-sm-9">
+            <select id="register" class="form-select" @bind="@_register">
+                <option value="-">&lt;@SharedLocalizer["Not Specified"]&gt;</option>
+                <option value="true">@SharedLocalizer["Yes"]</option>
+                <option value="false">@SharedLocalizer["No"]</option>
+            </select>
+        </div>
+    </div>
+</div>
