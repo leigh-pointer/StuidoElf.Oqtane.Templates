@@ -1,0 +1,79 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Version>5.0.0</Version>
+    <Authors>StudioElf</Authors>
+    <Company>StudioElf</Company>
+    <Description>Install package for Studio-Elf Code-behind Oqtane Templates for Modules and Themes.</Description>
+    <Product>StudioElf.CodeBehindTemplates</Product>
+    <Copyright>StudioElf</Copyright>
+    <AssemblyName>StudioElf.CodeBehindTemplates.Client.Oqtane</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Resources\**" />
+    <Compile Remove="Services\**" />
+    <Compile Remove="wwwroot\Modules\**" />
+    <Compile Remove="wwwroot\Themes\**" />
+    <Content Remove="Resources\**" />
+    <Content Remove="Services\**" />
+    <Content Remove="wwwroot\Modules\**" />
+    <Content Remove="wwwroot\Themes\**" />
+    <EmbeddedResource Remove="Resources\**" />
+    <EmbeddedResource Remove="Services\**" />
+    <EmbeddedResource Remove="wwwroot\Modules\**" />
+    <EmbeddedResource Remove="wwwroot\Themes\**" />
+    <None Remove="Resources\**" />
+    <None Remove="Services\**" />
+    <None Remove="wwwroot\Modules\**" />
+    <None Remove="wwwroot\Themes\**" />
+  </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Oqtane.Client" Version="5.0.2" />
+      <PackageReference Include="Oqtane.Shared" Version="5.0.2" />
+    </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="Modules\StudioElf.CodeBehindTemplates\Edit.razor" />
+    <Content Remove="Modules\StudioElf.CodeBehindTemplates\Settings.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
+	  <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="8.0.1" />
+	  <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="8.0.1" PrivateAssets="all" />
+	  <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Authentication" Version="8.0.1" />
+	  <PackageReference Include="Microsoft.Extensions.Localization" Version="8.0.1" />
+	  <PackageReference Include="System.Net.Http.Json" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Oqtane.Client">
+      <HintPath>..\..\..\..\Oqtane.Framework\Oqtane.Client\bin\Debug\net8.0\Oqtane.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Oqtane.Shared">
+      <HintPath>..\..\..\..\Oqtane.Framework\Oqtane.Shared\bin\Debug\net8.0\Oqtane.Shared.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <PropertyGroup>
+    <!-- there may be other elements here -->
+    <BlazorWebAssemblyEnableLinking>false</BlazorWebAssemblyEnableLinking>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+	<ItemGroup>
+		<ModuleTemplateFiles Include="$(ProjectDir)wwwroot\Modules\Templates\**\*.*" />
+		<ThemeTemplateFiles Include="$(ProjectDir)wwwroot\Themes\Templates\**\*.*" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="wwwroot\" />
+	</ItemGroup>
+
+	<Target Name="AddPayloadsFolder" AfterTargets="Publish">
+		<Copy SourceFiles="@(ModuleTemplateFiles)" DestinationFiles="@(ModuleTemplateFiles->'$(PublishDir)wwwroot\Modules\Templates\%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="false" />
+		<Copy SourceFiles="@(ThemeTemplateFiles)" DestinationFiles="@(ThemeTemplateFiles->'$(PublishDir)wwwroot\Themes\Templates\%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="false" />
+	</Target>
+</Project>

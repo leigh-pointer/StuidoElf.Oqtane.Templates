@@ -1,0 +1,14 @@
+﻿@namespace [Owner].[Theme]
+@inherits ThemeBase
+@using MudBlazor
+
+<MudThemeProvider />
+<MudDialogProvider />
+<MudSnackbarProvider />
+
+<MudLayout>
+    <MudMainContent>
+        <Pane Name="@PaneNames.Admin" />
+        <Pane Name="Content" />
+    </MudMainContent>
+</MudLayout>

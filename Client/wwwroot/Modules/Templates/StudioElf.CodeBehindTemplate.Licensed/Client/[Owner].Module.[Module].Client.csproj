@@ -1,0 +1,40 @@
+<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<Version>1.0.0</Version>
+		<Authors>[Owner]</Authors>
+		<Company>[Owner]</Company>
+		<Description>[Description]</Description>
+		<Product>[Owner].[Module]</Product>
+		<Copyright>[Owner]</Copyright>
+		<AssemblyName>[Owner].Module.[Module].Client.Oqtane</AssemblyName>
+		<CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+	</PropertyGroup>
+
+	<ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="8.0.4" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Authentication" Version="8.0.4" />
+    <PackageReference Include="Microsoft.Extensions.Localization" Version="8.0.4" />
+    <PackageReference Include="System.Net.Http.Json" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Http" Version="8.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Localization" Version="2.2.0" />
+		<PackageReference Include="Oqtane.Licensing" Version="5.1.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+    <ProjectReference Include="..\Shared\[Owner].Module.[Module].Shared.csproj" />
+  </ItemGroup>
+
+	<ItemGroup>
+		[ClientReference]
+		[SharedReference]
+	</ItemGroup>
+
+	<PropertyGroup>
+		<!-- there may be other elements here -->
+		<BlazorWebAssemblyEnableLinking>false</BlazorWebAssemblyEnableLinking>
+		<GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+	</PropertyGroup>
+
+</Project>
