@@ -6,9 +6,9 @@ using Oqtane.Themes;
 
 namespace [Owner].[Theme]
 {
-    public partial class Theme1 : ThemeBase
+    public partial class Theme : ThemeBase
     {
-        public override string Name => "Theme1";
+        public override string Name => "[Theme]";
 
         public override string Panes => PaneNames.Admin + ",Top Full Width,Top 100%,Left 50%,Right 50%,Left 33%,Center 33%,Right 33%,Left Outer 25%,Left Inner 25%,Right Inner 25%,Right Outer 25%,Left 25%,Center 50%,Right 25%,Left Sidebar 66%,Right Sidebar 33%,Left Sidebar 33%,Right Sidebar 66%,Bottom 100%,Bottom Full Width";
 

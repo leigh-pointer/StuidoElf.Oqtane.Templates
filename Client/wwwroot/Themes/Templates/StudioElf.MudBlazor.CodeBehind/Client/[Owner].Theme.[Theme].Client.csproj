@@ -9,6 +9,7 @@
     <Product>[Owner].Theme.[Theme]</Product>
     <Copyright>[Owner]</Copyright>
     <AssemblyName>[Owner].Theme.[Theme].Client.Oqtane</AssemblyName>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
   </PropertyGroup>
 
   <ItemGroup>
