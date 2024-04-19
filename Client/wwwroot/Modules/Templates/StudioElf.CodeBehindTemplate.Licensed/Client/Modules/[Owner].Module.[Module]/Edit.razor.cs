@@ -31,7 +31,7 @@ namespace [Owner].Module.[Module]
 		private ElementReference form;
 		private bool validated = false;
 		private Models.[Module] [Module] { get; set; } = new();
-		private int _id;
+		private int _[Module]Id;
 
 	   
 		protected override async Task OnInitializedAsync()
@@ -40,13 +40,13 @@ namespace [Owner].Module.[Module]
 			{
 				if (PageState.Action == "Edit")
 				{
-					_id = Int32.Parse(PageState.QueryString["id"]);
-					[Module] = await [Module]Service.Get[Module]Async(_id, ModuleState.ModuleId);
+					_[Module]Id = Int32.Parse(PageState.QueryString["id"]);
+					[Module] = await [Module]Service.Get[Module]Async(_[Module]Id, ModuleState.ModuleId);
 				}
 			}
 			catch (Exception ex)
 			{
-				await logger.LogError(ex, "Error Loading [Module] {[Module]Id} {Error}", _id, ex.Message);
+				await logger.LogError(ex, "Error Loading [Module] {[Module]Id} {Error}", _[Module]Id, ex.Message);
 				AddModuleMessage(Localizer["Message.LoadError"], MessageType.Error);
 			}
 		}
@@ -67,7 +67,7 @@ namespace [Owner].Module.[Module]
 					}
 					else
 					{
-						Models.[Module] [Module]Latest = await [Module]Service.Get[Module]Async(_id, ModuleState.ModuleId);
+						Models.[Module] [Module]Latest = await [Module]Service.Get[Module]Async(_[Module]Id, ModuleState.ModuleId);
 						// update values from the local version of [Module]
 						[Module]Latest.Name = [Module].Name;
 						// update Database with the latest version of [Module]

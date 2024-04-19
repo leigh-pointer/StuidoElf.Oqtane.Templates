@@ -1,5 +1,6 @@
 {
   "Title": "Theme Template Code-behind",
-  "Type": "ExternalCode-behind",
-  "Version": "5.0.0"
+  "Type": "External",
+  "Version": "5.1.0",
+  "Namespace": "[Owner].Theme.[Theme]"
 }

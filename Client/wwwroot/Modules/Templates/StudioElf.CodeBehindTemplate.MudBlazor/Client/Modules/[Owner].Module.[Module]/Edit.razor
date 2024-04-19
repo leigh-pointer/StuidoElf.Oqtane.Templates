@@ -3,21 +3,34 @@
 @namespace [Owner].Module.[Module]
 @inherits ModuleBase
 
-<form @ref="form" class="@(validated ? " was-validated" : "needs-validation" )" novalidate>
-    <div class="container">
-        <div class="row mb-1 align-items-center">
-            <Label Class="col-sm-3" For="name" HelpText="Enter a name" ResourceKey="Name">Name: </Label>
-            <div class="col-sm-9">
-                <input id="name" class="form-control" @bind="@[Module].Name" required />
-            </div>
-        </div>
-    </div>
-    <button type="button" class="btn btn-success" @onclick="Save">@Localizer["Save"]</button>
-    <NavLink class="btn btn-secondary" href="@NavigateUrl()">@Localizer["Cancel"]</NavLink>
-    <br /><br />
-    @if (PageState.Action == "Edit")
-    {
-    <AuditInfo CreatedBy="@[Module].CreatedBy" CreatedOn="@[Module].CreatedOn" ModifiedBy="@[Module].ModifiedBy" ModifiedOn="@[Module].ModifiedOn"></AuditInfo>
-    }
-</form>
+@if (IsLoaded)
+{
+    <MudThemeProvider />
+    <MudContainer Class="mt-16 px-8" MaxWidth="MaxWidth.False">
+        <MudGrid>
+            <MudItem xs="12">
+                <MudPaper Class="pa-4">
+                    <MudForm @ref="mudform" @bind-IsValid="@success">
+                        <MudTextField @bind-Value="@[Module].Name" Label="@Localizer["Name.Text"]" HelperText="@Localizer["Name.HelpText"]" Required="true" RequiredError="@Localizer["Name.Required"]" />
+                    </MudForm>
+                </MudPaper>
+                <MudDivider Class="pt-1 pb-1" />
+                <MudPaper Class="pa-3">
+                    <MudStack Justify="Justify.SpaceBetween" Row="true">
+                        <MudItem>
+                            <AuditInfo DateTimeFormat="dd-MMM-yyyy hh:mm" CreatedBy="@[Module].CreatedBy" CreatedOn="@[Module].CreatedOn"
+                                       ModifiedBy="@[Module].ModifiedBy" ModifiedOn="@[Module].ModifiedOn"></AuditInfo>
+                        </MudItem>
+                        <MudItem Class="d-flex align-end ">
+                            <div class="d-flex flex-row justify-end gap-0">
+                                <MudButton Variant="Variant.Filled" Color="Color.Success" DisableElevation="true" OnClick="@(()=>Save())">@Localizer["Save"]</MudButton>
+                                <MudButton Variant="Variant.Filled" Color="Color.Secondary" DisableElevation="true" Href="@NavigateUrl()" Class="mx-2">@Localizer["Cancel"]</MudButton>
+                            </div>
+                        </MudItem>
+                    </MudStack>
+                </MudPaper>
+            </MudItem>
+        </MudGrid>
+    </MudContainer>
+}
 

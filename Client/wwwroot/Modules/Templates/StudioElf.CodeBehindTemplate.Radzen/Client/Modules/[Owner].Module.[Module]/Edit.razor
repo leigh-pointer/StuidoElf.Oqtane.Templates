@@ -1,0 +1,30 @@
+@using Oqtane.Modules.Controls
+
+@namespace [Owner].Module.[Module]
+@inherits ModuleBase
+
+@if (IsLoaded)
+{
+	<RadzenComponents />
+ 
+    <form @ref="form" class="@(validated ? " was-validated" : "needs-validation" )" novalidate>
+        <div class="container">
+            <div class="col-md-4">
+                <RadzenLabel Text=@Localizer["Name.Text"] Component="Name" />
+            </div>
+            <div class="col">
+                <RadzenTextBox style="display: block" Name="Name" @bind-Value=@[Module].Name class="w-100" />
+                <RadzenRequiredValidator Component="Name" Text=@Localizer["Message.SaveValidation"] Popup=true Style="position: absolute" />
+            </div>
+        </div>
+        <RadzenButton Click="Save" Text=@Localizer["Save"] />
+        <NavLink class="btn btn-secondary" href="@NavigateUrl()">@Localizer["Cancel"]</NavLink>
+        <br /><br />
+        @if (PageState.Action == "Edit")
+        {
+        <AuditInfo CreatedBy="@[Module].CreatedBy" CreatedOn="@[Module].CreatedOn" ModifiedBy="@[Module].ModifiedBy" ModifiedOn="@[Module].ModifiedOn"></AuditInfo>
+        }
+    </form>
+}
+
+

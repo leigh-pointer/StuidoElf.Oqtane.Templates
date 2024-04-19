@@ -1,0 +1,43 @@
+@namespace [Owner].Module.[Module]
+@inherits ModuleBase
+
+@if (IsLoaded)
+{
+    <RadzenComponents />
+
+	<ActionLink Action="Add" Security="SecurityAccessLevel.Edit" Text="Add [Module]" ResourceKey="Add" />
+	<br />
+	<br />
+	@if (@_[Module]s.Count != 0)
+	{
+	<RadzenDataList WrapItems="true" AllowPaging="true"
+					Data="@_[Module]s"
+					PageSize="2" TItem="[Module].Models.[Module]">
+		<Template Context="context">
+			<RadzenCard Style="width:300px;">
+				<div class="row">
+					<div class="col-md-12">
+						<h2>Name: <b>@context.Name</b></h2>
+						<p>
+							<ActionLink Action="Edit"
+										Parameters="@($"id=" +
+													  context.[Module]Id.ToString())" />
+							&nbsp;&nbsp;
+							<ActionDialog Header="Delete RadzenTest"
+										  Message="@("Are You Sure You Wish To Delete The " + context.Name + " RadzenTest?")"
+										  Action="Delete" Security="SecurityAccessLevel.Edit"
+										  Class="btn btn-danger"
+										  OnClick="@(async () => await Delete(context))" />
+						</p>
+					</div>
+				</div>
+			</RadzenCard>
+		</Template>
+	</RadzenDataList>
+	}
+	else
+	{
+		<p>@Localizer["Message.DisplayNone"]</p>
+	}
+
+}
