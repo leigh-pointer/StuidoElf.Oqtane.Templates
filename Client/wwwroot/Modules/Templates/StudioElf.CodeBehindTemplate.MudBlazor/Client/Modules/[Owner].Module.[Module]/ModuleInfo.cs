@@ -12,7 +12,7 @@ namespace [Owner].Module.[Module]
             Version = "1.0.0",
             ServerManagerType = "[ServerManagerType]",
             ReleaseVersions = "1.0.0",
-            Dependencies = "[Owner].Module.[Module].Shared.Oqtane",
+            Dependencies = "[Owner].Module.[Module].Shared.Oqtane,MudBlazor",
             PackageName = "[Owner].[Module]" 
         };
     }

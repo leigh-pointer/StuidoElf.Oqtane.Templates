@@ -9,7 +9,7 @@ namespace StudioElf.CodeBehindTemplates
         {
             Name = "Studio-Elf Code-behind Templates [C#]",
             Description = "This in not a module.",
-            Version = "5.1.1",
+            Version = "5.1.1.1",
             Categories = "Developer",
             PackageName = "StudioElf.CodeBehindTemplates"
         };
