@@ -14,12 +14,3 @@ This repository consists of:
  <li>Oqtane module to install and uninstall the Templates
  </li>
  </ul>
-
-
-
-
-#Note:
-When you open your Module of Theme, make sure file nesting is enabled. 
-
-![image](https://user-images.githubusercontent.com/9447612/145402469-8448ca96-5f31-4212-9ae5-84d0b578fda3.png)
-</p>
